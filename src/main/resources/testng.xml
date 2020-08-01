@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="SUITE">
+    <test name="test1">
+<!--        <groups>-->
+<!--            <define name="All">-->
+<!--                <include name="killserver"/>-->
+<!--                <include name="startserver"/>-->
+<!--                <include name="login"/>-->
+<!--            </define>-->
+<!--            <run>-->
+<!--                <include name="killserver"/>-->
+<!--                <include name="startserver"/>-->
+<!--                <include name="login"/>-->
+<!--            </run>-->
+<!--        </groups>-->
+        <classes>
+            <class name="com.bilibili.test.AppiumInit"></class>
+        </classes>
+    </test>
+<!--    <listeners>-->
+<!--        <listener class-name=""></listener>-->
+<!--    </listeners>-->
+    <listeners>
+        <listener class-name="com.vimalselvam.testng.listener.ExtentTestNgFormatter"/>
+    </listeners>
+</suite>
