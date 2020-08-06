@@ -2,7 +2,7 @@ package com.bilibili.test;
 
 import com.bilibili.Utils.GetByLocator;
 import com.bilibili.Utils.InputGet;
-import com.bilibili.base.AndroidBase;
+import com.bilibili.base.AndroidDriverBase;
 import com.bilibili.base.Init;
 import com.bilibili.base.Methods;
 import com.bilibili.server.Port;
@@ -13,11 +13,8 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.android.nativekey.AndroidKey;
 import io.appium.java_client.android.nativekey.KeyEvent;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import java.io.FileInputStream;
-import java.io.FileReader;
 import java.io.IOException;
 import java.net.MalformedURLException;
 
@@ -28,7 +25,7 @@ public class AppiumInit {
     String server1 = "http://127.0.0.1";
     String inputName = InputGet.getInputName();
     String capsPath = "./src/main/resources/configs/capabilities.properties";
-    AndroidBase driver;
+    AndroidDriverBase driver;
 
 
     @Test
@@ -54,10 +51,12 @@ public class AppiumInit {
         logger.info("1111");
     }
 
+
+
     @Test
     public void login2(){
         try{
-            driver = new AndroidBase(server1, "4723", inputName, "3JU4C18416001256", capsPath);
+            driver = new AndroidDriverBase(server1, "4723", inputName, "3JU4C18416001256", capsPath);
             System.out.println("------------------------------");
             System.out.println(driver.input);
             Methods methods = new Methods(driver);

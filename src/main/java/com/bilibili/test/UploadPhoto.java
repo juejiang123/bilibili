@@ -5,18 +5,17 @@ import com.bilibili.Utils.GetByLocator;
 import com.bilibili.Utils.ImageUtil;
 import com.bilibili.Utils.InputGet;
 import com.bilibili.Utils.RandomUtil;
-import com.bilibili.base.AndroidBase;
+import com.bilibili.base.AndroidDriverBase;
 import com.bilibili.base.Methods;
 import io.appium.java_client.android.AndroidElement;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.util.List;
 
 public class UploadPhoto {
 
-    AndroidBase driver;
+    AndroidDriverBase driver;
     private static Log logger = Log.getLogger(UploadPhoto.class);
     String server1 = "http://127.0.0.1";
     String inputName = InputGet.getInputName();
@@ -24,7 +23,7 @@ public class UploadPhoto {
 
     @Test
     public void beforeClass() throws IOException, InterruptedException {
-        driver = new AndroidBase(server1,"4723",inputName,"3JU4C18416001256",capsPath);
+        driver = new AndroidDriverBase(server1,"4723",inputName,"3JU4C18416001256",capsPath);
         Methods login = new Methods(driver);
         login.bilibiliLogin();
 

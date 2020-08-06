@@ -18,7 +18,6 @@ import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -27,14 +26,14 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 
-public class AndroidBase extends AndroidDriver {
+public class AndroidDriverBase extends AndroidDriver {
 
-    private Log logger = Log.getLogger(AndroidBase.class);
+    private Log logger = Log.getLogger(AndroidDriverBase.class);
     public String input;
     public String udid;
 
     //构造函数，创建driver对象
-    public AndroidBase(String server,String port,String input,String udid,String capsPath) throws MalformedURLException {
+    public AndroidDriverBase(String server, String port, String input, String udid, String capsPath) throws MalformedURLException {
         super(new URL(server+":"+port+"/wd/hub"),new NewCaps().initCaps(capsPath,udid));
         this.input = input;
         this.udid = udid;
@@ -462,6 +461,13 @@ public class AndroidBase extends AndroidDriver {
 
     }
 
+    /**
+     * 屏幕的部分图片截图
+     * @param ele
+     * @param path
+     * @param filename
+     * @throws IOException
+     */
     public void partialScreenForElement(AndroidElement ele,String path,String filename) throws IOException {
         Point location = ele.getLocation();
         Dimension size = ele.getSize();
@@ -478,6 +484,6 @@ public class AndroidBase extends AndroidDriver {
         String server = "http://127.0.0.1";
         String inputName = InputGet.getInputName();
         String capsPath = "./src/main/resources/configs/capabilities.properties";
-        AndroidBase driver = new AndroidBase(server, "4723", inputName, "3JU4C18416001256", capsPath);
+        AndroidDriverBase driver = new AndroidDriverBase(server, "4723", inputName, "3JU4C18416001256", capsPath);
     }
 }
