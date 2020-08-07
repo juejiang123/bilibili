@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name="appiumtest" parallel="tests" thread-count="2">
+    <listeners>
+        <listener class-name="com.vimalselvam.testng.listener.ExtentTestNgFormatter"/>
+    </listeners>
+    <test>
+        <parameter name="udid" value="3JU4C18416001256"/>
+        <parameter name="port" value="4723"/>
+        <classes>
+            <class name="com.bilibili.test.AppiumInit"/>
+            <class name="com.bilibili.test.LoginTest"/>
+            <class name="com.bilibili.test.UploadPhoto"/>
+        </classes>
+    </test>
+    <test>
+        <parameter name="udid" value="c1ab0ae1"/>
+        <parameter name="port" value="4724"/>
+        <classes>
+            <class name="com.bilibili.test.AppiumInit"/>
+            <class name="com.bilibili.test.LoginTest"/>
+            <class name="com.bilibili.test.UploadPhoto"/>
+        </classes>
+    </test>
+</suite>
