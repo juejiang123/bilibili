@@ -27,29 +27,29 @@ public class AppiumInit {
     String capsPath = "./src/main/resources/configs/capabilities.properties";
     AndroidDriverBase driver;
 
-
-    @Test
-    public void killserver() throws InterruptedException {
-        server.killServer();
-        Thread.sleep(1000);
-        logger.debug("XXXX");
-    }
-
-    @Test(dependsOnMethods = "killserver")
-    public void startserver(){
-        server.startServer();
-        logger.info("杀死进程");
-
-    }
-
-    @Test
-    public void login() throws IOException, InterruptedException {
-        AndroidDriver<AndroidElement> driver = Init.initDriver();
-        Methods methods = new Methods(driver);
-        methods.bilibiliLogin();
-
-        logger.info("1111");
-    }
+//
+//    @Test
+//    public void killserver() throws InterruptedException {
+//        server.killServer();
+//        Thread.sleep(1000);
+//        logger.debug("XXXX");
+//    }
+//
+//    @Test(dependsOnMethods = "killserver")
+//    public void startserver(){
+//        server.startServer();
+//        logger.info("杀死进程");
+//
+//    }
+//
+//    @Test
+//    public void login() throws IOException, InterruptedException {
+//        AndroidDriver<AndroidElement> driver = Init.initDriver();
+//        Methods methods = new Methods(driver);
+//        methods.bilibiliLogin();
+//
+//        logger.info("1111");
+//    }
 
 
 

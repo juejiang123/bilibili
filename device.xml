@@ -2,12 +2,12 @@
 
 <device name="appiumstartlist">
     <deviceID id="0">
-        <deviceName>1110</deviceName>
-        <appiumPort>888</appiumPort>
+        <deviceName>3JU4C18416001256</deviceName>
+        <appiumPort>4723</appiumPort>
     </deviceID>
     <deviceID id="1">
-        <deviceName>1111</deviceName>
-        <appiumPort>889</appiumPort>
+        <deviceName>c1ab0ae1</deviceName>
+        <appiumPort>4724</appiumPort>
     </deviceID>
     <deviceID id="2">
         <deviceName>1112</deviceName>

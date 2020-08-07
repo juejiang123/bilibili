@@ -28,7 +28,7 @@ public class Servers {
         List<String> devList = new ArrayList<String>();
 //        System.out.println(list.size());
         if(list.size()>2){
-            for(int i=1;i<list.size();i++){
+            for(int i=1;i<list.size()-1;i++){
 //                System.out.println(list.get(i));
                 String[] s = list.get(i).split("\t");
                 if(s[s.length-1].trim().toLowerCase().contains("device")) {

@@ -14,6 +14,8 @@ import io.appium.java_client.android.nativekey.KeyEvent;
 import io.appium.java_client.touch.offset.PointOption;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Point;
+import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -45,11 +47,15 @@ public class LoginTest {
             System.out.println(driver.input);
             Login login = new Login(driver);
             login.bilibiliLogin(userName,password);
-            Thread.sleep(5000);
-            for(int i=0;i<2;i++){
-                driver.pressKey(new KeyEvent(AndroidKey.BACK));
-            }
-            Thread.sleep(1000);
+            Thread.sleep(10000);
+            boolean b = driver.getPageSource().contains("错误");
+            System.out.println(b);
+            Assert.assertEquals(b,true);
+//            Thread.sleep(5000);
+//            for(int i=0;i<2;i++){
+//                driver.pressKey(new KeyEvent(AndroidKey.BACK));
+//            }
+//            Thread.sleep(1000);
 
 
 
@@ -89,5 +95,10 @@ public class LoginTest {
 //        Thread.sleep(1000);
 
 
+    }
+
+    @AfterMethod
+    public void quit(){
+        driver.quit();
     }
 }

@@ -16,6 +16,7 @@
 <!--        </groups>-->
         <classes>
             <class name="com.bilibili.test.AppiumInit"></class>
+            <class name="com.bilibili.test.LoginTest"></class>
         </classes>
     </test>
 <!--    <listeners>-->
